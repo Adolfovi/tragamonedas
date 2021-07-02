@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/first.css">
+    <script src="js/game.js"></script>
+</head>
+
+<body onload="putmoney()">
+    <div id="main">
+
+        <div id="box">
+            <div id="results">
+                <div id="resultone"></div>
+                <div id="resulttwo"></div>
+                <div id="resultthree"></div>
+            </div>
+            <div id="buttons">
+                <div onmousedown="onbuttononedown()" onmouseup="onbuttononeup()" onclick="buttononepressed()" id="buttonone">
+
+                </div>
+                <div onmousedown="onbuttontwodown()" onmouseup="onbuttontwoup()" onclick="buttontwopressed()" id="buttontwo">
+
+
+                </div>
+                <div onmousedown="onbuttonthreedown()" onmouseup="onbuttonthreeup()" onclick="buttonthreepressed()" id="buttonthree">
+
+                </div>
+
+            </div>
+
+            <div id="actions">
+                <div id="output"></div>
+                <div onmousedown="onbuttonstartdown()" onmouseup="onbuttonstartup()" onclick="letsgo()" id="start"></div>
+
+            </div>
+        </div>
+    </div>
+    <div id="moneyy"><div>Money: <span id="account">-</span></div></div>
+</body>
+
+</html>

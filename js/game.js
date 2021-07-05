@@ -43,7 +43,7 @@ function ruletone() {
 
 // FUNCIÓN QUE ACTIVA EL EFECTO RULETA
 function ruletoneactived() {
-    rone = setInterval('ruletone()', 150);
+    rone = setInterval('ruletone()', 125);
 
 }
 
@@ -68,7 +68,7 @@ function rulettwo() {
 
 // FUNCIÓN QUE ACTIVA EL EFECTO RULETA
 function rulettwoactived() {
-    rtwo = setInterval('rulettwo()', 150);
+    rtwo = setInterval('rulettwo()', 125);
 
 }
 
@@ -95,7 +95,7 @@ function ruletthree() {
 
 // FUNCIÓN QUE ACTIVA EL EFECTO RULETA
 function ruletthreeactived() {
-    rthree = setInterval('ruletthree()', 150);
+    rthree = setInterval('ruletthree()', 125);
 
 }
 

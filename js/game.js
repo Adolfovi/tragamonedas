@@ -9,6 +9,8 @@ var rtwo;
 var rthree;
 var factorrandom;
 var isPlaying = false;
+var lockone = false;
+var locktwo = false;
 
 // PARA "INSERTAR MONEDAS" EN LA MAQUINA TRAGAPERRAS
 function putmoney() {
@@ -41,7 +43,7 @@ function ruletone() {
 
 // FUNCIÓN QUE ACTIVA EL EFECTO RULETA
 function ruletoneactived() {
-    rone = setInterval('ruletone()', 100);
+    rone = setInterval('ruletone()', 500);
 
 }
 
@@ -66,7 +68,7 @@ function rulettwo() {
 
 // FUNCIÓN QUE ACTIVA EL EFECTO RULETA
 function rulettwoactived() {
-    rtwo = setInterval('rulettwo()', 100);
+    rtwo = setInterval('rulettwo()', 500);
 
 }
 
@@ -93,17 +95,18 @@ function ruletthree() {
 
 // FUNCIÓN QUE ACTIVA EL EFECTO RULETA
 function ruletthreeactived() {
-    rthree = setInterval('ruletthree()', 100);
+    rthree = setInterval('ruletthree()', 500);
 
 }
 
 
 
-
+// FUNCIONES QUE INDICAN QUE TIENE QUE OCURRIR CUANDO APRETAMOS CADA UNO DE LOS BOTONES DE LA MAQUINA
 
 function buttononepressed() {
     if (isPlaying) {
         clearInterval(rone);
+        lockone = true;
     } else {
         console.log("HELLO")
     }
@@ -112,6 +115,7 @@ function buttononepressed() {
 function buttontwopressed() {
     if (isPlaying) {
         clearInterval(rtwo);
+        locktwo = true;
     } else {
         console.log("HELLO2")
     }
@@ -121,42 +125,28 @@ function buttonthreepressed() {
     if (isPlaying) {
         clearInterval(rthree);
 
-        if (optionone == optiontwo && optiontwo == optionthree && optionone == optionthree) {
-            console.log("GANASTES");
-            mnParseado = mnParseado + 2;
-            document.getElementById('output').innerHTML = "+2€";
-            document.getElementById('account').innerHTML = mnParseado + "€";
-            isPlaying = false;
+            if (optionone == optiontwo && optiontwo == optionthree && optionone == optionthree && lockone == true && locktwo == true) {
+                console.log("GANASTES");
+                mnParseado = mnParseado + 2;
+                document.getElementById('output').innerHTML = "+2€";
+                document.getElementById('account').innerHTML = mnParseado + "€";
+                isPlaying = false;
 
-        } else {
-            console.log("PERDISTES");
-            mnParseado = mnParseado - 1;
-            document.getElementById('output').innerHTML = "-1€";
-            document.getElementById('account').innerHTML = mnParseado + "€";
-            isPlaying = false;
-        }
-
+            } else if(lockone == false || locktwo == false){
+                alert("No vuelvas a hacer eso...");
+                location.reload();
+            } else {
+                console.log("PERDISTES");
+                mnParseado = mnParseado - 1;
+                document.getElementById('output').innerHTML = "-1€";
+                document.getElementById('account').innerHTML = mnParseado + "€";
+                isPlaying = false;
+            }
     } else {
         console.log("HELLO3")
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -172,6 +162,8 @@ function letsgo() {
             rulettwoactived();
             ruletthreeactived();
             isPlaying = true;
+            lockone = false;
+            locktwo = false;
 
 
         }
@@ -185,9 +177,6 @@ function letsgo() {
     }
 
 }
-
-
-
 
 
 //GRUPO DE FUNCIONES PARA CONFIGURAR BOTONES QUE CAMBIAN DE COLOR DE FORMA DINÁMICA

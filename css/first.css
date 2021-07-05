@@ -1,3 +1,31 @@
+body {
+  background-image: url("/img/fondocasinoo.png");
+  background-size: 2000px;
+  background-position-y: -83px;
+  background-position-x: center;
+}
+
+#moneyy div{
+
+    background-color: #d4d4d4;
+    padding: 10px; 
+    border: 2px solid black; 
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #main{
         display: flex;
         flex-direction: column;

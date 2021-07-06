@@ -5,6 +5,13 @@ body{
         
 }
 
+#money div{
+    background-color: #cecece;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
 #main{
         display: flex;
         flex-direction: column;
